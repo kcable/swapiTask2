@@ -12,7 +12,7 @@ async function getEntity(apiUrl) {
     const { results } = await (await fetch(`${apiUrl}?page=${i}`)).json();
     sumArr.push(...results);
   }
-  return sumArr;
+  return {count,results:sumArr};
 }
 
 module.exports = {
